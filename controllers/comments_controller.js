@@ -17,6 +17,9 @@ router.post('/',async(req,res) =>{
     if(!req.body.message){
         req.body.message = ""
     }
+    if(!req.body.user_name){
+        req.body.user_name = "anonymous"
+    }
     const comment = await Comment.create(req.body)
     res.json(comment)
 })

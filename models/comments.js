@@ -2,41 +2,29 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('comments', {
-      place_id: {
+      comment_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      user_name:{
         type: Sequelize.STRING
       },
-      city: {
-        type: Sequelize.STRING
-      },
-      state: {
-        type: Sequelize.STRING
-      },
-      cuisines: {
-        type: Sequelize.STRING
-      },
-      pic: {
-        type: Sequelize.STRING
-      },
-      founded: {
-        type: Sequelize.INTEGER,
-      },
-      created_at: {
+      rate: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.INTEGER
       },
-      updated_at: {
+      comment: {
+        type: Sequelize.STRING
+      },
+      song_name: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('places');
+    await queryInterface.dropTable('comments');
   }
 };
