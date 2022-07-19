@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/music', require('./controllers/music_controller'))
+app.use('/comments', require('./controllers/comments_controller'))
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {
