@@ -4,6 +4,8 @@ const db = require("../models");
 const { Comment } = db
 const{Op} = require('sequelize')
 
+//seeing all the comments
+//should I sort them?
 router.get('/', async (req, res) => {
     try{
         const foundComment = await Comment.findAll()
@@ -32,8 +34,6 @@ router.post('/',async(req,res) =>{
         res.status(500).json(err)
     }
 })
-
-//reading other comments
 
 //updating comments
 

@@ -6,7 +6,8 @@ module.exports = {
       name: 'Jane Doe',
       rating: 7,
       comment: '10/10 would listen again',
-      song_name: 'Baby Shark'
+      song_name: 'Baby Shark',
+      date: "2022-07-20"
     }])
   },
 

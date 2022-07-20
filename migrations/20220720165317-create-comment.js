@@ -8,9 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      Comment_id: {
-        type: Sequelize.INTEGER
-      },
       name: {
         type: Sequelize.STRING
       },
@@ -23,11 +20,7 @@ module.exports = {
       song_name: {
         type: Sequelize.STRING
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
+      date: {
         allowNull: false,
         type: Sequelize.DATE
       }
