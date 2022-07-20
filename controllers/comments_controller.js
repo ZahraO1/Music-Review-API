@@ -1,8 +1,8 @@
+//Dependencies
 const router = require('express').Router()
 const db = require("../models");
-
-//need to make Db
 const { Comment } = db
+const{Op} = require('sequelize')
 
 router.get('/', async (req, res) => {
     //const places = await Place.findAll()
@@ -14,14 +14,21 @@ router.get('/', async (req, res) => {
 //posting comments
 router.post('/',async(req,res) =>{
     //posting the rating and decription and songname
-    if(!req.body.message){
-        req.body.message = ""
+    if(!req.body.comment){
+        req.body.comment = ""
     }
     if(!req.body.user_name){
         req.body.user_name = "anonymous"
     }
-    const comment = await Comment.create(req.body)
-    res.json(comment)
+    try {
+        const newComment = await Comment.create(req.body)
+        res.status(200).json({
+            message: 'Successfully inserted a new review',
+            data: newComment
+        })
+    } catch(err) {
+        res.status(500).json(err)
+    }
 })
 
 //reading other comments
