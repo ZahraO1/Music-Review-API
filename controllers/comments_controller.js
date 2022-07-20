@@ -2,7 +2,8 @@
 const router = require('express').Router()
 const db = require("../models");
 const { Comment } = db
-const{Op} = require('sequelize')
+const{Op} = require('sequelize');
+const { timingSafeEqual } = require('crypto');
 
 //seeing all the comments
 //should I sort them?
@@ -34,6 +35,34 @@ router.post('/',async(req,res) =>{
         res.status(500).json(err)
     }
 })
+
+//finding specific comment, finding it by who post it
+router.get('/:name', async (req, res) => {
+    try {
+        const foundComment = await Comment.findOne({
+            where: { 
+                name: {[Op.like]: `%${req.query.name ? req.query.name : ""}%`}
+            }
+        })
+        res.status(200).json(foundComment)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+//finding comment based on song name
+router.get('/:song', async (req, res) => {
+    try {
+        const foundComment = await Comment.findOne({
+            where: { 
+                song_name: {[Op.like]: `%${req.query.song ? req.query.song : ""}%`}
+            }
+        })
+        res.status(200).json(foundComment)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
 
 //updating comments
 
