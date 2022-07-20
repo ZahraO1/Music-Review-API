@@ -5,10 +5,12 @@ const { Comment } = db
 const{Op} = require('sequelize')
 
 router.get('/', async (req, res) => {
-    //const places = await Place.findAll()
-    //res.json(places)
-
-    res.send("Hello World")
+    try{
+        const foundComment = await Comment.findAll()
+        res.status(200).json(foundComment)
+    }catch(error){
+        res.status(500).json(error)
+    }
 })
 
 //posting comments
@@ -17,8 +19,8 @@ router.post('/',async(req,res) =>{
     if(!req.body.comment){
         req.body.comment = ""
     }
-    if(!req.body.user_name){
-        req.body.user_name = "anonymous"
+    if(!req.body.name){
+        req.body.name = "Anonymous"
     }
     try {
         const newComment = await Comment.create(req.body)
