@@ -65,7 +65,37 @@ router.get('/:song', async (req, res) => {
 
 
 //updating comments
+router.put('/:id', async (req, res) => {
+    try {
+        const updatedComment = await Comment.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.status(200).json({
+            message: `Successfully updated ${updatedComment} comment(s)`
+        })
+    } catch(err) {
+        res.status(500).json(err)
+    }
+})
+
 
 //deleting comments
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedComments = await Comment.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.status(200).json({
+            message: `Successfully deleted ${deletedComments} comment(s)`
+        })
+    } catch(err) {
+        res.status(500).json(err)
+    }
+})
+
 
 module.exports = router
