@@ -56,7 +56,7 @@ router.get('/name/:input', async (req, res) => {
 //finding comment based on song name
 router.get('/song/:input', async (req, res) => {
     try {
-        const foundComment = await Comment.findOne({
+        const foundComment = await Comment.findAll({
             where: { 
                 //song_name: {[Op.like]: `%${req.query.input ? req.query.input : ""}%`}
                 song_name: req.query.input
