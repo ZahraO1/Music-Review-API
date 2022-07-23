@@ -18,10 +18,12 @@ router.get('/', async (req, res) => {
 
 //posting comments
 router.post('/',async(req,res) =>{
-    //posting the rating and decription and songname
+    //posting the comment
+    //if there is no comment, the default value is ""
     if(!req.body.comment){
         req.body.comment = ""
     }
+    //if there's no name, the default name is "Anonymous"
     if(!req.body.name){
         req.body.name = "Anonymous"
     }
@@ -37,24 +39,12 @@ router.post('/',async(req,res) =>{
 })
 
 //finding specific comment, finding it by who post it
-router.get('/:name', async (req, res) => {
+router.get('/name/:input', async (req, res) => {
     try {
         const foundComment = await Comment.findOne({
             where: { 
-                name: {[Op.like]: `%${req.query.name ? req.query.name : ""}%`}
-            }
-        })
-        res.status(200).json(foundComment)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-})
-//finding comment based on song name
-router.get('/:song', async (req, res) => {
-    try {
-        const foundComment = await Comment.findOne({
-            where: { 
-                song_name: {[Op.like]: `%${req.query.song ? req.query.song : ""}%`}
+                //name: {[Op.like]: `%${req.query.input ? req.query.input : ""}%`}
+                name: req.query.input
             }
         })
         res.status(200).json(foundComment)
@@ -63,6 +53,32 @@ router.get('/:song', async (req, res) => {
     }
 })
 
+//finding comment based on song name
+router.get('/song/:input', async (req, res) => {
+    try {
+        const foundComment = await Comment.findOne({
+            where: { 
+                //song_name: {[Op.like]: `%${req.query.input ? req.query.input : ""}%`}
+                song_name: req.query.input
+            }
+        })
+        res.status(200).json(foundComment)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+router.get('/id/:input', async (req, res) => {
+    try {
+        const foundComment = await Comment.findOne({
+            where: { 
+                id: req.params.input
+            }
+        })
+        res.status(200).json(foundComment)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
 
 //updating comments
 router.put('/:id', async (req, res) => {
