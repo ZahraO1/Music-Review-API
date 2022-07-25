@@ -2,7 +2,7 @@
 const router = require('express').Router()
 const db = require("../models");
 const { Comment } = db
-const{Op} = require('sequelize');
+const {Op} = require('sequelize');
 //const { timingSafeEqual } = require('crypto');
 
 //seeing all the comments
@@ -38,7 +38,7 @@ router.post('/',async(req,res) =>{
     }
 })
 
-//finding specific comment, finding it by who post it
+/* //finding specific comment, finding it by who post it
 router.get('/name/:input', async (req, res) => {
     try {
         const foundComment = await Comment.findOne({
@@ -51,9 +51,9 @@ router.get('/name/:input', async (req, res) => {
     } catch (error) {
         res.status(500).json(error)
     }
-})
+}) */
 
-//finding comment based on song name
+/* //finding comment based on song name
 router.get('/song/:input', async (req, res) => {
     try {
         const foundComment = await Comment.findAll({
@@ -66,12 +66,13 @@ router.get('/song/:input', async (req, res) => {
     } catch (error) {
         res.status(500).json(error)
     }
-})
-router.get('/id/:input', async (req, res) => {
+}) */
+
+router.get('/:id', async (req, res) => {
     try {
         const foundComment = await Comment.findOne({
             where: { 
-                id: req.params.input
+                id: req.params.id
             }
         })
         res.status(200).json(foundComment)
