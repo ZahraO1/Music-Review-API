@@ -16,7 +16,7 @@
   "production": {
     "username": "postgres",
     "password": "password",
-    "database": "music_review_production",
+    "database": "DATA_URL",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
