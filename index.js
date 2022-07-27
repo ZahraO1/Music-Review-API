@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/comments', require('./controllers/comments_controller'))
 
 // Listen for Connections
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log(`Listening on ${process.env.PORT}`)
 })
 
