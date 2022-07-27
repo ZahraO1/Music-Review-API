@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "password",
-    "database": "music_review",
-    "host": "db_container:3306",
+    "username": "USER",
+    "password": "PASSWORD",
+    "database": "DATA_URL",
+    "host": "HOST",
     "dialect": "postgres"
   },
   "test": {
-    "username": "postgres",
-    "password": "password",
-    "database": "music_review_test",
-    "host": "db_container:3306",
+    "username": "USER",
+    "password": "PASSWORD",
+    "database": "DATA_URL",
+    "host": "HOST",
     "dialect": "postgres"
   },
   "production": {
-    "username": "postgres",
-    "password": "password",
+    "username": "USER",
+    "password": "PASSWORD",
     "database": "DATA_URL",
-    "host": "db_container:3306",
+    "host": "HOST",
     "dialect": "postgres"
   }
 }
