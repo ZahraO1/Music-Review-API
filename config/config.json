@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "USER",
-    "password": "PASSWORD",
-    "database": "DATA_URL",
+    "username": "elyfyibnpjsepp",
+    "password": "b74eb97b46973550f531577cfda2c53455649c63d8e662271d7ba3f67ae0ec7e",
+    "database": "d8aqpe2hu7d9hs",
     "host": "ec2-54-157-79-121.compute-1.amazonaws.com",
     "dialect": "postgres"
   },
   "test": {
-    "username": "USER",
-    "password": "PASSWORD",
-    "database": "DATA_URL",
+    "username": "elyfyibnpjsepp",
+    "password": "b74eb97b46973550f531577cfda2c53455649c63d8e662271d7ba3f67ae0ec7e",
+    "database": "d8aqpe2hu7d9hs",
     "host": "ec2-54-157-79-121.compute-1.amazonaws.com",
     "dialect": "postgres"
   },
   "production": {
-    "username": "USER",
-    "password": "PASSWORD",
-    "database": "DATA_URL",
+    "username": "elyfyibnpjsepp",
+    "password": "b74eb97b46973550f531577cfda2c53455649c63d8e662271d7ba3f67ae0ec7e",
+    "database": "d8aqpe2hu7d9hs",
     "host": "ec2-54-157-79-121.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
