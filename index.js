@@ -6,6 +6,8 @@ const cors = require('cors')
 const app = express();
 const { Sequelize } = require('sequelize')
 
+
+var port = process.env.PORT || 5000
 // Express Settings
 app.use(cors())
 app.use(express.static('public'))
@@ -26,7 +28,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/comments', require('./controllers/comments_controller'))
 
 // Listen for Connections
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
     console.log(`Listening on ${process.env.PORT}`)
 })
 
