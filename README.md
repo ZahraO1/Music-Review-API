@@ -1,7 +1,7 @@
 # Spootify-Review-API
 ***
 
-Music-Review-API is an API where users can access and manipulate reviews for a song.
+Music-Review-API is an API where users can access and view, create, update, and delete reviews for a song.
 
 ### **Setup**
 ***
@@ -13,7 +13,7 @@ Next create a `.env` file. It will need to contain the following environment var
 PORT=5000
 PG_URI=postgres://postgresql:password@localhost:5432/music_review
 ```
-Next, run `npm install` to instal dependencies for the API.
+Next, run `npm install` to install dependencies for the API.
 Finally, run `nodemon` to run the API.
 
 ### **Date Models**

@@ -36,6 +36,7 @@ router.post('/',async(req,res) =>{
     }
 })
 
+//users can get specific comment using it's ID
 router.get('/:id', async (req, res) => {
     try {
         const foundComment = await Comment.findOne({
