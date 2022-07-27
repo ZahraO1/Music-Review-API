@@ -3,14 +3,14 @@
     "username": "postgres",
     "password": "password",
     "database": "music_review",
-    "host": "127.0.0.1",
+    "host": "db_container:3306",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": "password",
     "database": "music_review_test",
-    "host": "127.0.0.1",
+    "host": "db_container:3306",
     "dialect": "postgres"
   },
   "production": {
