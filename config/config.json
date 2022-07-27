@@ -17,7 +17,7 @@
     "username": "postgres",
     "password": "password",
     "database": "DATA_URL",
-    "host": "127.0.0.1",
+    "host": "db_container:3306",
     "dialect": "postgres"
   }
 }
