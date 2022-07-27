@@ -1,4 +1,4 @@
-# Music-Review-API
+# Spootify-Review-API
 ***
 
 Music-Review-API is an API where users can access and manipulate reviews for a song.
